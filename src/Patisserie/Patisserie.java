@@ -19,6 +19,7 @@ public class Patisserie extends javax.swing.JFrame {
         initComponents();
         setTitle("Patisserie");
         setLocationRelativeTo(this);
+        rbexo.setEnabled(false);
         
         
     }
@@ -32,50 +33,222 @@ public class Patisserie extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        jButton10 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        cbxpers = new javax.swing.JComboBox();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        rbexo = new javax.swing.JRadioButton();
+        rbnormal = new javax.swing.JRadioButton();
+        lblprice = new javax.swing.JLabel();
+        btnprice = new javax.swing.JButton();
+        btnneworder = new javax.swing.JButton();
+        cbxcake = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Tel Number");
+        jButton10.setText("Logut");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
 
-        jLabel2.setText("Customer  Name");
+        jLabel1.setText("Size of the cake");
 
-        jLabel3.setText("Adress");
+        cbxpers.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "6 pers", "10 pers", "15 pers", "20 pers", " ", " " }));
+        cbxpers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxpersActionPerformed(evt);
+            }
+        });
 
-        jLabel4.setText("Date");
+        jLabel2.setText("Cake Name");
+
+        buttonGroup1.add(rbexo);
+        rbexo.setText("exotic");
+
+        buttonGroup1.add(rbnormal);
+        rbnormal.setSelected(true);
+        rbnormal.setText("normal");
+
+        btnprice.setText("Price");
+        btnprice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnpriceActionPerformed(evt);
+            }
+        });
+
+        btnneworder.setText("New Order");
+        btnneworder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnneworderActionPerformed(evt);
+            }
+        });
+
+        cbxcake.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "bahamas", "foret noire", "foret blanche", "mille feuille vanille", "mille feuille chocolat" }));
+        cbxcake.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbxcakeItemStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(815, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cbxpers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(57, 57, 57)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(cbxcake, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblprice, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btnprice, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(51, 51, 51)
+                                        .addComponent(btnneworder, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(257, 257, 257)
+                        .addComponent(rbnormal)
+                        .addGap(45, 45, 45)
+                        .addComponent(rbexo)))
+                .addGap(0, 458, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton10)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbxpers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbxcake))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rbnormal)
+                    .addComponent(rbexo))
+                .addGap(42, 42, 42)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnprice)
+                    .addComponent(btnneworder))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(422, Short.MAX_VALUE))
+                .addComponent(lblprice, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(299, 299, 299))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        this.dispose();
+        
+            Login login =new Login();
+            login.setVisible(true); 
+    }//GEN-LAST:event_jButton10ActionPerformed
+     
+    private void btnpriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpriceActionPerformed
+
+        int price=0;
+        switch(cbxcake.getSelectedItem().toString()){
+            case "bahamas":
+                price=3;
+                break;
+                
+            case "foret noire":
+                price=2;
+                break;
+            case "foret blanche":
+                    price=2;
+                break;
+            case "mille feuille vanille":
+                price=4;
+                break;
+            case "mille feuille chocolat":
+                price=4;
+                break;
+                
+        }
+        
+        switch(cbxpers.getSelectedItem().toString()){
+            case "6 pers":
+                price=price*6;
+                break;
+                
+            case "10 pers":
+                price=price*10;
+                break;
+            case "15 pers":
+                    price=price*15;
+                break;
+            case"20 pers":
+                 price=price*20;
+                 break;
+                         
+                
+        }
+        if(rbexo.isSelected()){
+            price=price+5;
+        }
+        lblprice.setText("you must pay"+price+"$");
+        cbxpers.setEnabled(false);
+        cbxcake.setEnabled(false);
+        rbnormal.setEnabled(false);
+        btnprice.setEnabled(false);
+        lblprice.setVisible(true);
+        lblprice.setEnabled(true);
+        
+        
+    }//GEN-LAST:event_btnpriceActionPerformed
+
+    private void btnneworderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnneworderActionPerformed
+
+         cbxpers.setEnabled(true);
+        cbxcake.setEnabled(true);
+        rbnormal.setEnabled(true);
+        btnprice.setEnabled(true);
+        lblprice.setEnabled(false);
+        lblprice.setVisible(false);
+        cbxpers.setSelectedIndex(0);
+        cbxcake.setSelectedIndex(0);
+        
+        
+                
+    }//GEN-LAST:event_btnneworderActionPerformed
+
+    private void cbxpersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxpersActionPerformed
+     
+        
+            
+        
+
+    }//GEN-LAST:event_cbxpersActionPerformed
+
+    private void cbxcakeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxcakeItemStateChanged
+    if((cbxcake.getSelectedItem().equals("foret noire"))||(cbxcake.getSelectedItem().equals("foret blanche"))){
+           rbexo.setEnabled(true);
+       }else{
+           rbexo.setEnabled(false);
+           rbnormal.setSelected(true);
+       }
+
+
+    }//GEN-LAST:event_cbxcakeItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -106,6 +279,7 @@ public class Patisserie extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new Patisserie().setVisible(true);
             }
@@ -113,9 +287,34 @@ public class Patisserie extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnneworder;
+    private javax.swing.JButton btnprice;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JComboBox cbxcake;
+    private javax.swing.JComboBox cbxpers;
+    private javax.swing.JButton jButton10;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel lblprice;
+    private javax.swing.JRadioButton rbexo;
+    private javax.swing.JRadioButton rbnormal;
     // End of variables declaration//GEN-END:variables
+
+    static class ColumnsPriv {
+
+        public ColumnsPriv() {
+        }
+    }
+
+    static class CustomerInfo {
+
+        public CustomerInfo() {
+        }
+    }
+
+    static class Customer {
+
+        public Customer() {
+        }
+    }
 }
